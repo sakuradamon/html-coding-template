@@ -1,0 +1,189 @@
+@charset "utf-8";
+.c-form-container {
+    ::selection {
+        color: #999;
+        background: #eee;
+    }
+    ::-moz-selection {
+        color: #999;
+        background: #eee;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="password"],
+    textarea,
+    select {
+        -webkit-appearance: none;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="password"],
+    textarea,
+    select {
+        display: block;
+        border: 1px solid $color-border;
+        width: 100%;
+        padding: 10px;
+        line-height: 1.5;
+    }
+    select {
+        padding-right: 30px;
+        position: relative;
+        z-index: 0;
+        background: url(../images/select_icon.png) no-repeat right center white;
+    }
+    input[type="submit"],
+    button {
+        cursor: pointer;
+    }
+}
+//ラベル
+.block-label {
+    display: block;
+    cursor: pointer;
+}
+
+//チェックボックス
+.c-check {
+    line-height: 20px;
+    display: inline-block;
+    margin: 0 10px;
+    label {
+        @include prefix(user-select,none);
+        position: relative;
+        line-height: 20px;
+        font-weight: normal;
+        cursor: pointer;
+        text-align: left;
+        padding-left: 25px;
+        &::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 0;
+            display: block;
+            width: 20px;
+            height: 20px;
+            margin-top: -9px;
+            background: white;
+            border: 2px solid $color-border;
+        }
+    }
+    input[type="checkbox"] {
+        display: none;
+        &:checked+label::after {
+            @include prefix(transform, rotate(-45deg));
+            content: "";
+            position: absolute;
+            top: 50%;
+            display: block;
+            left: 2px;
+            width: 16px;
+            height: 8px;
+            margin-top: -6px;
+            border-left: 3px solid black;
+            border-bottom: 3px solid black;
+        }
+    }
+}
+
+//チェックボックスボタン
+.c-check-button {
+    label {
+        @include prefix(user-select,none);
+        font-size: $font-size-base;
+        line-height: 1;
+        background: $color-main;
+        font-weight: bold;
+        text-align: center;
+        color: white;
+        padding: 20px 20px 20px 60px;
+        position: relative;
+        display: block;
+        cursor: pointer;
+        &::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 20px;
+            display: block;
+            width: 20px;
+            height: 20px;
+            margin-top: -10px;
+            background: white;
+        }
+    }
+    input[type="checkbox"] {
+        display: none;
+        &:checked+label::after {
+            @include prefix(transform, rotate(-45deg));
+            content: "";
+            position: absolute;
+            top: 50%;
+            display: block;
+            left: 22px;
+            width: 16px;
+            height: 8px;
+            margin-top: -6px;
+            border-left: 3px solid $color-main;;
+            border-bottom: 3px solid $color-main;;
+        }
+    }
+    &.c-check-button-fb {
+        label {
+            background: $color-fb;
+        }
+        input:checked[type="checkbox"]+label::after {
+            border-left: 3px solid $color-fb;;
+            border-bottom: 3px solid $color-fb;;
+        }
+    }
+    &.c-check-button-tw {
+        label {
+            background: $color-tw;
+        }
+        input:checked[type="checkbox"]+label::after {
+            border-left: 3px solid $color-tw;;
+            border-bottom: 3px solid $color-tw;;
+        }
+    }
+}
+
+//ラジオボタン
+.c-radio {
+    display: inline-block;
+    line-height: 20px;
+    label {
+        @include prefix(user-select,none);
+        line-height: 1;
+        font-weight: normal;
+        cursor: pointer;
+        text-align: left;
+        vertical-align: middle;
+    }
+    input[type="radio"] {
+        -webkit-appearance: none;
+        display: inline-block;
+        position: relative;
+        width: 20px;
+        height: 20px;
+        border-radius: 10px;
+        border: 1px solid $color-border;
+        background:white;
+        cursor: pointer;
+        vertical-align: middle;
+        &:checked::after {
+            content: "";
+            display: block;
+            width: 14px;
+            height: 14px;
+            border-radius: 8px;
+            background: $color-main;
+            position: absolute;
+            top: 2px;
+            left: 2px;
+        }
+    }
+}

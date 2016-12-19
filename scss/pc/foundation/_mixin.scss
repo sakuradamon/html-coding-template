@@ -1,0 +1,58 @@
+@charset "utf-8";
+
+// ==========================================================================
+// mixin
+// ==========================================================================
+
+//prefix
+//vender prefixを設定します
+@mixin prefix($property, $value) {
+    #{$property}: $value;
+    @each $prefix in -webkit-, -moz-, -ms-, -o- {
+        #{$prefix}#{$property}: $value;
+    }
+}
+@mixin prefix-value($property, $value) {
+    #{$property}: $value;
+    @each $prefix in -webkit-, -moz-, -ms-, -o- {
+        #{$property}: #{$prefix}#{$value};
+    }
+}
+
+// font-size
+//pxとremでfont-sizeを設定します
+@mixin font-size($size, $base:10) {
+    @if $size == 100 {
+        font-size: 100%;
+    } @else {
+        font-size: $size + px;
+        font-size: ($size / $base) * 1rem;
+    }
+}
+
+//ellipsis-box
+//行の最後でテキストを省略（...）します
+//@mixin ellipsis-box([font-size],[行数],[line-height])
+@mixin ellipsis-box($fs:$font-size-base,$line:2,$lh:1) {
+    @include font-size($fs);
+    @include prefix-value(display,box);
+    @include prefix(box-orient,vertical);
+    @include prefix(line-clamp,$line);
+    line-height: $lh;
+    height: ($line * $fs * $lh) + px;
+    overflow: hidden;
+}
+
+//font-set
+%font-meiryo {
+    font-family: "メイリオ",Meiryo,"ヒラギノ角ゴPro W3","Hiragino KakuGothic Pro","ＭＳ Ｐゴシック","MS PGothic",sans-serif;
+}
+%font-hira-go {
+    font-family: "ヒラギノ角ゴPro W3","Hiragino KakuGothic Pro","メイリオ",Meiryo,"ＭＳ Ｐゴシック","MS PGothic",sans-serif;
+}
+%font-yu-go {
+    font-family: "游ゴシック体","Yu Gothic",YuGothic,"ヒラギノ角ゴPro W3","Hiragino KakuGothic Pro","メイリオ",Meiryo,"ＭＳ Ｐゴシック","MS PGothic",sans-serif;
+}
+%font-yu-min {
+    font-family: "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
+}

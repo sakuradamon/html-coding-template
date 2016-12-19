@@ -1,0 +1,43 @@
+extends _template/_layout.pug
+
+block title
+    title Sample
+
+block content
+    div.p-header-image
+
+    div#about.c-container
+        h2.c-title About
+        h3.p-about-title PugとSassとLiveReloadで快適なコーディング
+        p.p-about-text
+            |これは
+            a(href="https://github.com/pugjs" target="_blank") Pug
+            |、
+            a(href="https://github.com/sass" target="_blank") Sass
+            |、
+            a(href="http://livereload.com/" target="_blank") LiveReload
+            |を簡単に導入して快適なコーディングをするためのテンプレートです。
+
+    div#sample.c-white-container
+        .c-container.p-contact-form
+            h2.c-title Sample
+            .c-form-container
+                form
+                    dl.p-input-list
+                        dd(data-role="form-group"): input(type="text", placeholder="氏名*", name="name", data-role="form")
+                        dd(data-role="form-group"): input(type="text", placeholder="メールアドレス*", name="email", data-role="form")
+                        dd(data-role="form-group")
+                            input(type="text", placeholder="メールアドレス（確認用）*", name="email-confirm", data-role="form")
+                        dd(data-role="form-group"): input(type="text", placeholder="会社名／組織名", name="company", data-role="form")
+                        dd(data-role="form-group")
+                            select(name="subject", data-role="form")
+                                option(value="") 件名を選択してください*
+                                option(value="お問い合わせ１") お問い合わせ１
+                                option(value="お問い合わせ２") お問い合わせ２
+                                option(value="お問い合わせ３") お問い合わせ３
+                        dd(data-role="form-group"): textarea(placeholder="お問い合わせ内容*", name="content", data-role="form")
+                        dd(data-role="form-group"): input.c-button(type="submit", value="送信", data-btn="submit")
+
+block script
+    script(src=root_dir+"js/contact.js")
+    script(src=root_dir+"js/main.js")

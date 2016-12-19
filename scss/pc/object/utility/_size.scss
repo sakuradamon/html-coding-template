@@ -1,0 +1,7 @@
+@charset "utf-8";
+
+@for $i from 0 through 10 {
+    .u-w#{$i*10} {
+        width: #{$i*10%};
+    }
+}

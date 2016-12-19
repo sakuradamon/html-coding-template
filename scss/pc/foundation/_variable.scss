@@ -1,0 +1,35 @@
+@charset "utf-8";
+
+// ==========================================================================
+// 各種設定
+// ==========================================================================
+
+// image path
+$img_path: "/images";
+
+// font
+$font-base: "ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,"ＭＳ Ｐゴシック","MS PGothic",sans-serif;
+$fa-font-path: "/fonts";
+$fa-font-size-base: 1.0em;
+
+// font-size
+$font-size-base: 16;
+
+// line-height
+$line-height: 1.5;
+
+// color-site
+$color-main: #fd0;
+$color-body: #f4f4f5;
+$color-border: #cdcdcd;
+$color-text: #000;
+$color-title: #aaa;
+$color-link: #333;
+$color-select: #b88be0;
+
+// color-social
+$color-tw: #1da1f2;
+$color-fb: #3765a3;
+$color-line: #4ecd00;
+
+$title-font: 'Quicksand', sans-serif;

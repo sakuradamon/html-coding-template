@@ -1,0 +1,16 @@
+@charset "utf-8";
+
+%clearfix {
+    *zoom: 1;
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+.u-clearfix {
+    @extend %clearfix;
+}
+.u-clear {
+    clear: both;
+}

@@ -1,0 +1,49 @@
+@charset "utf-8";
+
+header {
+    background: white;
+    .c-container {
+        @extend %clearfix;
+        padding: 15px;
+    }
+}
+.logo {
+    font-family: $title-font;
+    float: left;
+    font-size: 3.0rem;
+    line-height: 1;
+    vertical-align: middle;
+    font-weight: normal;
+}
+nav {
+    float: right;
+    font-size: 0;
+    li {
+        @include font-size($font-size-base);
+        display: inline-block;
+        margin: 0 20px;
+    }
+}
+.nav-link {
+    font-family: $title-font;
+    text-decoration: none;
+    display: block;
+    line-height: 30px;
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        text-align: center;
+    }
+    .logo {
+        float: none;
+    }
+    nav {
+        float: none;
+        margin-top: 10px;
+        li {
+            font-size: 1.3rem;
+            margin: 0 10px;
+        }
+    }
+}
