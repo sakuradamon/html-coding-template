@@ -11,7 +11,7 @@ module.exports = function(grunt) {
             pc: {
                 options: {
                     port: 9001,
-                    base: 'www/pc'
+                    base: 'www'
                 }
             }
         },
@@ -31,7 +31,7 @@ module.exports = function(grunt) {
             source: {
                 expand: true,
                 cwd: 'assets',
-                src: '**/*',
+                src: ['**/*','!**/*.map'],
                 dest: 'www'
             }
         },
@@ -65,13 +65,42 @@ module.exports = function(grunt) {
         sass: {
             pc : {
                 src : 'scss/pc/style.scss',
-                dest : 'www/pc/css/style.css'
+                dest : 'assets/css/style.css'
             }
+            /*
+            sp : {
+                src : 'scss/sp/style.scss',
+                dest : 'assets/css/style_sp.css'
+            }
+            */
         },
         cssmin : {
             pc : {
-                src : 'www/pc/css/style.css',
-                dest : 'www/pc/css/style.min.css'
+                src : 'assets/css/style.css',
+                dest : 'assets/css/style.min.css'
+            }
+            /*
+            sp : {
+                src : 'assets/css/style_sp.css',
+                dest : 'assets/css/style_sp.min.css'
+            }
+            */
+        },
+        babel : {
+            options: {
+                sourceMap: true,
+                presets: ['babel-preset-es2015']
+            },
+            dist: {
+                files: [
+                    {
+                        "expand": true,
+                        "cwd": "javascript",
+                        "src": ["*.js", "**/*.js"],
+                        "dest": "assets/js",
+                        "ext": ".js"
+                    }
+                ]
             }
         },
         // Watch
@@ -91,7 +120,12 @@ module.exports = function(grunt) {
                 files: 'scss/**/*.scss',
                 tasks: ['sass', 'cssmin']
             },
-            // scss
+            // js
+            js: {
+                files: ["javascript/**/*.js"],
+                tasks: ["babel", 'copy']
+            },
+            // copy
             assets: {
                 files: 'assets/**/*',
                 tasks: ['copy']
@@ -105,17 +139,18 @@ module.exports = function(grunt) {
     });
 
     // プラグインの読み込み
-    grunt.loadNpmTasks('grunt-contrib-pug');
-    grunt.loadNpmTasks('grunt-contrib-sass');
+    grunt.loadNpmTasks('grunt-babel');
     grunt.loadNpmTasks('grunt-combine-media-queries');
-    grunt.loadNpmTasks('grunt-contrib-cssmin');
-    grunt.loadNpmTasks('grunt-contrib-copy');
-    grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-connect');
+    grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-contrib-pug');
+    grunt.loadNpmTasks('grunt-contrib-sass');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-open');
 
     // defaultタスクの設定
-    grunt.registerTask('default', ['clean', 'copy', 'pug', 'sass', 'cssmin', 'connect', 'open', 'watch']);
+    grunt.registerTask('default', ['clean', 'pug', 'sass', 'cssmin', 'babel', 'copy', 'connect', 'open', 'watch']);
 };

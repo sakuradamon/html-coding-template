@@ -1,0 +1,14 @@
+@charset "utf-8";
+
+.p-gallery {
+    position: relative;
+    li {
+        position: absolute;
+        transition-property:top,left;
+        transition-duration:0.3s;
+        transition-timing-function:ease-out;
+    }
+}
+.p-gallery-reserve {
+    display: none;
+}

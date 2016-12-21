@@ -21,7 +21,7 @@ nav {
     li {
         @include font-size($font-size-base);
         display: inline-block;
-        margin: 0 20px;
+        margin: 0 0 0 40px;
     }
 }
 .nav-link {

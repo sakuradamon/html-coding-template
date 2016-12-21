@@ -1,0 +1,43 @@
+extends _template/_layout.pug
+
+block title
+    title Sample
+
+block content
+
+    div#about.c-container
+        h2.c-title About
+        h3.p-about-title Gallery
+        p.p-about-text
+            |画像を入れ替えながら並べ替えるjsサンプルです。
+
+    div#sample.c-white-container
+        .c-container
+            h2.c-title Sample
+            ul#gallery.p-gallery
+                li: img(src="images/001.jpg")
+                li: img(src="images/002.jpg")
+                li: img(src="images/003.jpg")
+                li: img(src="images/004.jpg")
+                li: img(src="images/005.jpg")
+                li: img(src="images/006.jpg")
+                li: img(src="images/007.jpg")
+                li: img(src="images/008.jpg")
+                li: img(src="images/009.jpg")
+
+            ul#reserve.p-gallery-reserve
+                li: img(src="images/010.jpg")
+                li: img(src="images/011.jpg")
+                li: img(src="images/012.jpg")
+                li: img(src="images/013.jpg")
+                li: img(src="images/014.jpg")
+                li: img(src="images/015.jpg")
+                li: img(src="images/016.jpg")
+                li: img(src="images/017.jpg")
+                li: img(src="images/018.jpg")
+                li: img(src="images/019.jpg")
+                li: img(src="images/020.jpg")
+
+block script
+    script(src=root_dir+'js/main.js')
+    script(src=root_dir+'js/gallery.js')

@@ -1,18 +1,21 @@
 {
-    "name": "grunt-templete",
-    "version": "1.0.0",
-    "title": "grunt-templete",
-    "devDependencies": {
-        "grunt": "*",
-        "grunt-contrib-pug": "*",
-        "grunt-contrib-sass": "*",
-        "grunt-combine-media-queries": "*",
-        "grunt-contrib-cssmin": "*",
-        "grunt-contrib-uglify": "*",
-        "grunt-contrib-clean": "*",
-        "grunt-contrib-connect": "*",
-        "grunt-contrib-copy": "*",
-        "grunt-contrib-watch": "*",
-        "grunt-open": "*"
-    }
+  "name": "grunt-templete",
+  "version": "1.0.0",
+  "title": "grunt-templete",
+  "devDependencies": {
+    "babel-preset-es2015": "*",
+    "babel-preset-react": "*",
+    "grunt": "*",
+    "grunt-babel": "*",
+    "grunt-combine-media-queries": "*",
+    "grunt-contrib-clean": "*",
+    "grunt-contrib-connect": "*",
+    "grunt-contrib-copy": "*",
+    "grunt-contrib-cssmin": "*",
+    "grunt-contrib-pug": "*",
+    "grunt-contrib-sass": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-open": "*"
+  }
 }

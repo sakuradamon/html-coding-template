@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>Sample</title>
+    <meta name="description" content="">
+    <meta name="keywords" keywords="">
+    <meta name="robots" content="noindex,nofollow,noarchive">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:400,700" rel="stylesheet" media="all">
+    <link href="css/style.css" rel="stylesheet" media="all">
+  </head>
+  <body>
+    <header>
+      <div class="c-container">
+        <h1 class="logo">Sample</h1>
+        <nav>
+          <ul>
+            <li><a class="nav-link" href="#about">About</a></li>
+            <li><a class="nav-link" href="#sample">Sample</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <div class="p-header-image"></div>
+      <div class="c-container" id="about">
+        <h2 class="c-title">About</h2>
+        <h3 class="p-about-title">PugとSassとLiveReloadで快適なコーディング</h3>
+        <p class="p-about-text">これは<a href="https://github.com/pugjs" target="_blank">Pug</a>、<a href="https://github.com/sass" target="_blank">Sass</a>、<a href="http://livereload.com/" target="_blank">LiveReload</a>を簡単に導入して快適なコーディングをするためのテンプレートです。</p>
+      </div>
+      <div class="c-white-container" id="sample">
+        <div class="c-container p-contact-form">
+          <h2 class="c-title">Sample</h2>
+          <div class="c-form-container">
+            <form>
+              <dl class="p-input-list">
+                <dd data-role="form-group">
+                  <input type="text" placeholder="氏名*" name="name" data-role="form">
+                </dd>
+                <dd data-role="form-group">
+                  <input type="text" placeholder="メールアドレス*" name="email" data-role="form">
+                </dd>
+                <dd data-role="form-group">
+                  <input type="text" placeholder="メールアドレス（確認用）*" name="email-confirm" data-role="form">
+                </dd>
+                <dd data-role="form-group">
+                  <input type="text" placeholder="会社名／組織名" name="company" data-role="form">
+                </dd>
+                <dd data-role="form-group">
+                  <select name="subject" data-role="form">
+                    <option value="">件名を選択してください*</option>
+                    <option value="お問い合わせ１">お問い合わせ１</option>
+                    <option value="お問い合わせ２">お問い合わせ２</option>
+                    <option value="お問い合わせ３">お問い合わせ３</option>
+                  </select>
+                </dd>
+                <dd data-role="form-group">
+                  <textarea placeholder="お問い合わせ内容*" name="content" data-role="form"></textarea>
+                </dd>
+                <dd data-role="form-group">
+                  <input class="c-button" type="submit" value="送信" data-btn="submit">
+                </dd>
+              </dl>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="c-container">
+        <p>Copyright</p>
+      </div>
+    </footer>
+    <div class="c-page-top-button" id="page-top"></div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="js/contact.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/test.js"></script>
+  </body>
+</html>
